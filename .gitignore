@@ -1,0 +1,4 @@
+go_rest_template*
+out/
+vendor/
+_vendor-*

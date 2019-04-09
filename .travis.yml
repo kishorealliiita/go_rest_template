@@ -1,0 +1,19 @@
+language: go
+go: 
+ - 1.3.3
+ - 1.4.2
+ - 1.5.1
+ - release
+ - tip
+
+script:
+ - go test -v ./...
+
+deploy:
+  provider: s3
+  access_key_id: "YOUR AWS ACCESS KEY"
+  secret_access_key: "YOUR AWS SECRET KEY"
+  skip_cleanup: true
+  bucket: "S3 Bucket"
+  on:
+    condition: "$CC = gcc"
